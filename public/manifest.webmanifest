@@ -1,0 +1,17 @@
+{
+  "name": "PRAGADA V S N L P KUMAR Portfolio",
+  "short_name": "Pragada Portfolio",
+  "description": "ECE, VLSI, AI, and software development portfolio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#071521",
+  "theme_color": "#071521",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
