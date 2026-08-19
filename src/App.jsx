@@ -40,36 +40,11 @@ const skillCategoryMeta = {
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showContactStatus, setShowContactStatus] = useState(false);
-  const [displayedCode, setDisplayedCode] = useState('');
-  const [showPortfolio, setShowPortfolio] = useState(false);
 
   useEffect(() => {
     document.body.classList.toggle('menu-open', mobileMenuOpen);
     return () => document.body.classList.remove('menu-open');
   }, [mobileMenuOpen]);
-
-  useEffect(() => {
-    const hackingCode = `> Initializing Portfolio System...
-> Loading User Profile...
-> Accessing Database...
-> Decrypting Data...
-[████████████████████] 100%
-> System Ready
-> Entering Portfolio Interface...`;
-
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < hackingCode.length) {
-        setDisplayedCode(hackingCode.substring(0, index + 1));
-        index++;
-      } else {
-        clearInterval(interval);
-        setTimeout(() => setShowPortfolio(true), 2000);
-      }
-    }, 50);
-    
-    return () => clearInterval(interval);
-  }, []);
 
   const profileSummary = useMemo(
     () => ['ECE Engineer', 'VLSI & AI Enthusiast', 'Digital Designer', 'Software Developer'],
@@ -99,14 +74,6 @@ function App() {
     setShowContactStatus(true);
     form.reset();
   };
-
-  if (!showPortfolio) {
-    return (
-      <div className="min-h-screen bg-black text-green-400 font-mono p-8 flex items-center justify-center">
-        <div className="whitespace-pre-wrap">{displayedCode}<span className="animate-pulse">_</span></div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-midnight text-slateText">
